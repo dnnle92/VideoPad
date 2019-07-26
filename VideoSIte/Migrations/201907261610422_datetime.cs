@@ -1,0 +1,18 @@
+namespace VideoSIte.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class datetime : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Videos", "DateAdded", c => c.DateTime(nullable: false));
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Videos", "DateAdded");
+        }
+    }
+}

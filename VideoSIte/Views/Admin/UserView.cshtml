@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin </h2>
+
+@model IEnumerable<VideoSIte.Models.UserViewModel>
+<div class="row">
+    <h4>Users</h4>
+
+    @foreach (var user in Model ?? Enumerable.Empty<dynamic>())
+    {
+        <p>
+            <strong>
+                @user.Username | @user.Email | @user.Role
+            </strong>
+        </p>
+    }
+</div>
+
+<ul>
+    <li>@Html.ActionLink("Create User", "CreateUser", "Admin")</li>
+    <li>@Html.ActionLink("Assign Role", "AssignRole", "Admin")</li>
+
+</ul>
