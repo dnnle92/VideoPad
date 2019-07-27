@@ -1,8 +1,23 @@
-﻿
+﻿@model IEnumerable<VideoSIte.Models.Video>
+@using VideoSIte.Models
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Video</h2>
+<div class="vert-offset-top-2">
+    <div class="list-group col-sm-3">
+        @Html.Partial("CategoryView")
+    </div>
+    <div class="row">
+        <iframe width="560"
+                height="315"
+                src="https://www.youtube.com/embed/9TBTPf_TiPk"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+    </div>
+</div>
+
 

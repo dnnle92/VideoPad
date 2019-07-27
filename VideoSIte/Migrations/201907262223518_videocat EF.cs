@@ -3,12 +3,12 @@ namespace VideoSIte.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class VideoCatMapping : DbMigration
+    public partial class videocatEF : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.VideoCategories",
+                "dbo.Categories",
                 c => new
                     {
                         CatId = c.Int(nullable: false, identity: true),
@@ -16,7 +16,7 @@ namespace VideoSIte.Migrations
                         Parent_CatId = c.Int(),
                     })
                 .PrimaryKey(t => t.CatId)
-                .ForeignKey("dbo.VideoCategories", t => t.Parent_CatId)
+                .ForeignKey("dbo.Categories", t => t.Parent_CatId)
                 .Index(t => t.Parent_CatId);
             
             CreateTable(
@@ -25,11 +25,12 @@ namespace VideoSIte.Migrations
                     {
                         VideoId = c.Int(nullable: false, identity: true),
                         VideoName = c.String(),
+                        DateAdded = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.VideoId);
             
             CreateTable(
-                "dbo.VideoCategoryMapping",
+                "dbo.VideoCategory",
                 c => new
                     {
                         VideoId = c.Int(nullable: false),
@@ -37,7 +38,7 @@ namespace VideoSIte.Migrations
                     })
                 .PrimaryKey(t => new { t.VideoId, t.VideoCatId })
                 .ForeignKey("dbo.Videos", t => t.VideoId, cascadeDelete: true)
-                .ForeignKey("dbo.VideoCategories", t => t.VideoCatId, cascadeDelete: true)
+                .ForeignKey("dbo.Categories", t => t.VideoCatId, cascadeDelete: true)
                 .Index(t => t.VideoId)
                 .Index(t => t.VideoCatId);
             
@@ -45,15 +46,15 @@ namespace VideoSIte.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.VideoCategoryMapping", "VideoCatId", "dbo.VideoCategories");
-            DropForeignKey("dbo.VideoCategoryMapping", "VideoId", "dbo.Videos");
-            DropForeignKey("dbo.VideoCategories", "Parent_CatId", "dbo.VideoCategories");
-            DropIndex("dbo.VideoCategoryMapping", new[] { "VideoCatId" });
-            DropIndex("dbo.VideoCategoryMapping", new[] { "VideoId" });
-            DropIndex("dbo.VideoCategories", new[] { "Parent_CatId" });
-            DropTable("dbo.VideoCategoryMapping");
+            DropForeignKey("dbo.VideoCategory", "VideoCatId", "dbo.Categories");
+            DropForeignKey("dbo.VideoCategory", "VideoId", "dbo.Videos");
+            DropForeignKey("dbo.Categories", "Parent_CatId", "dbo.Categories");
+            DropIndex("dbo.VideoCategory", new[] { "VideoCatId" });
+            DropIndex("dbo.VideoCategory", new[] { "VideoId" });
+            DropIndex("dbo.Categories", new[] { "Parent_CatId" });
+            DropTable("dbo.VideoCategory");
             DropTable("dbo.Videos");
-            DropTable("dbo.VideoCategories");
+            DropTable("dbo.Categories");
         }
     }
 }

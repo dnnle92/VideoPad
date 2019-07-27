@@ -41,19 +41,19 @@ namespace VideoSIte.Models
     {
         public Video()
         {
-            this.VideoCategories = new HashSet<VideoCategory>();
+            this.Categories = new HashSet<Category>();
         }
         [Key]
         public int VideoId { get; set; }
         public string VideoName { get; set; }
         public System.DateTime DateAdded { get; set; }
 
-        public virtual ICollection<VideoCategory> VideoCategories { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
     }
 
-    public class VideoCategory
+    public class Category
     {
-        public VideoCategory()
+        public Category()
         {
             this.Videos = new HashSet<Video>();
         }
@@ -61,11 +61,11 @@ namespace VideoSIte.Models
         public int CatId { get; set; }
         public string CatName { get; set; }
 
-        public virtual VideoCategory Parent { get; set; }
-        public virtual ICollection<VideoCategory> Children { get; set; }
+        public virtual Category Parent { get; set; }
+        public virtual ICollection<Category> Children { get; set; }
         public virtual ICollection<Video> Videos { get; set; }
 
-        public class Mapping : EntityTypeConfiguration<VideoCategory>
+        public class Mapping : EntityTypeConfiguration<Category>
         {
             public Mapping()
             {
@@ -78,7 +78,7 @@ namespace VideoSIte.Models
     {
         public DbSet<UserDetail> UserDetails { get; set; }
         public DbSet<Video> Videos { get; set; }
-        public DbSet<VideoCategory> VideoCategories { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -86,15 +86,15 @@ namespace VideoSIte.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new VideoCategory.Mapping());
+            modelBuilder.Configurations.Add(new Category.Mapping());
             modelBuilder.Entity<Video>()
-                .HasMany<VideoCategory>(v => v.VideoCategories)
+                .HasMany<Category>(v => v.Categories)
                 .WithMany(c => c.Videos)
                 .Map(vc =>
                     {
                         vc.MapLeftKey("VideoId");
                         vc.MapRightKey("VideoCatId");
-                        vc.ToTable("VideoCategoryMapping");
+                        vc.ToTable("VideoCategory");
                     });
 
             base.OnModelCreating(modelBuilder);

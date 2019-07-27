@@ -14,29 +14,27 @@ namespace VideoSIte.Controllers
         // GET: Video
         public ActionResult Index()
         {
-            var video = new Video
-            {
-                VideoName =  "TestVideo",
-                DateAdded = DateTime.Now
-            };
-            context.Videos.Add(video);
 
-            var category = new Category
-            {
-                CatName = "Cat1"
-            };
-            context.Categories.Add(category);
+            //var video = new Video
+            //{
+            //    VideoName = "TennisVideo",
+            //    DateAdded = DateTime.Now
+            //};
+            //video.Categories.Add(new Category
+            //{
+            //    CatName = "Sports"
+            //});
+            //video.Categories.Add(new Category
+            //{
+            //    CatName = "Tennis"
+            //});
 
-            var videocategory = new VideoCategory
-            {
-                Video = video,
-                Category = category
-            };
-            context.
-
-
+            //context.Videos.Add(video);
+            //context.SaveChanges();
 
             return View();
         }
+
+
     }
 }

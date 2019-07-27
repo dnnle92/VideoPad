@@ -7,13 +7,13 @@ namespace VideoSIte.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class VideoCatMapping : IMigrationMetadata
+    public sealed partial class videocatEF : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(VideoCatMapping));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(videocatEF));
         
         string IMigrationMetadata.Id
         {
-            get { return "201907252002449_VideoCatMapping"; }
+            get { return "201907262223518_videocat EF"; }
         }
         
         string IMigrationMetadata.Source

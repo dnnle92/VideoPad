@@ -240,13 +240,9 @@
     <Compile Include="Migrations\201907231914062_UserDetail2.Designer.cs">
       <DependentUpon>201907231914062_UserDetail2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907252002449_VideoCatMapping.cs" />
-    <Compile Include="Migrations\201907252002449_VideoCatMapping.Designer.cs">
-      <DependentUpon>201907252002449_VideoCatMapping.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907261610422_datetime.cs" />
-    <Compile Include="Migrations\201907261610422_datetime.Designer.cs">
-      <DependentUpon>201907261610422_datetime.cs</DependentUpon>
+    <Compile Include="Migrations\201907262223518_videocat EF.cs" />
+    <Compile Include="Migrations\201907262223518_videocat EF.Designer.cs">
+      <DependentUpon>201907262223518_videocat EF.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -321,6 +317,7 @@
     <Content Include="Views\Admin\Details.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Video\CategoryView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -349,11 +346,8 @@
     <EmbeddedResource Include="Migrations\201907231914062_UserDetail2.resx">
       <DependentUpon>201907231914062_UserDetail2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907252002449_VideoCatMapping.resx">
-      <DependentUpon>201907252002449_VideoCatMapping.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907261610422_datetime.resx">
-      <DependentUpon>201907261610422_datetime.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907262223518_videocat EF.resx">
+      <DependentUpon>201907262223518_videocat EF.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
