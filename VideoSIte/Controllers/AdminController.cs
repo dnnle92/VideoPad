@@ -15,19 +15,19 @@ namespace VideoSIte.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
-        private ApplicationDbContext context = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Admin
         public ActionResult Index()
         {
-            var usersWithRoles = (from user in context.Users
+            var usersWithRoles = (from user in db.Users
                                   select new
                                   {
                                       id = user.Id,
                                       Username = user.UserName,
                                       Email = user.Email,
                                       RoleNames = (from userRole in user.Roles
-                                                   join role in context.Roles on userRole.RoleId equals role.Id
+                                                   join role in db.Roles on userRole.RoleId equals role.Id
                                                    select role.Name).ToList()
                                   }).ToList().Select(p => new UserViewModel()
 
@@ -48,7 +48,7 @@ namespace VideoSIte.Controllers
         [HttpPost]
         public ActionResult CreateUser(FormCollection form)
         {
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             string userName = form["txtEmail"];
             string email = form["txtEmail"];
             string pwd = form["txtPassword"];
@@ -65,17 +65,17 @@ namespace VideoSIte.Controllers
 
         public ActionResult AssignRole()
         {
-            ViewBag.Roles = context.Roles.Select(r => new SelectListItem { Value = r.Name, Text = r.Name }).ToList();
+            ViewBag.Roles = db.Roles.Select(r => new SelectListItem { Value = r.Name, Text = r.Name }).ToList();
             return View();
         }
 
         [HttpPost]
         public ActionResult AssignRole(FormCollection form)
         {
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             string userName = form["txtUserName"];
             string roleName = form["RoleName"];
-            ApplicationUser user = context.Users.Where(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+            ApplicationUser user = db.Users.Where(u => u.UserName.Equals(userName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
 
             userManager.AddToRole(user.Id, roleName);
 
@@ -87,7 +87,7 @@ namespace VideoSIte.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserDetail userdetail = this.context.UserDetails.FirstOrDefault(p => p.Id == id);
+            UserDetail userdetail = this.db.UserDetails.FirstOrDefault(p => p.Id == id);
             if (userdetail == null)
             {
                 return HttpNotFound();
@@ -102,8 +102,8 @@ namespace VideoSIte.Controllers
         {            
             if (ModelState.IsValid)
             {
-                context.Entry(model).State = EntityState.Modified;
-                context.SaveChanges();
+                db.Entry(model).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Details");
             }
 
@@ -116,7 +116,7 @@ namespace VideoSIte.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserDetail userdetail = this.context.UserDetails.FirstOrDefault(p => p.Id == id);
+            UserDetail userdetail = this.db.UserDetails.FirstOrDefault(p => p.Id == id);
             if (userdetail == null)
             {
                 return HttpNotFound();

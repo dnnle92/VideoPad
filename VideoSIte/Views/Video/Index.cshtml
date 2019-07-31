@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<VideoSIte.Models.Video>
-@using VideoSIte.Models
+@*@model VideoSIte.Models.Category*@
+@*@using VideoSIte.Models*@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,7 +9,7 @@
 <h2>Video</h2>
 <div class="vert-offset-top-2">
     <div class="list-group col-sm-3">
-        @Html.Partial("CategoryView")
+        @Html.Partial("Category")
     </div>
     <div class="row">
         <iframe width="560"
@@ -21,3 +22,33 @@
 </div>
 
 
+@*<div class="row">
+    <div class="col-xs-12 col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+            @if (Model.CatName == "Sports")
+            {
+                <li class="active">
+                    <a href="~/Videos/Index/1">Sports</a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a href="~/Videos/Index/1">Sports</a>
+                </li>
+            }
+            @if (Model.CatName == "Tennis")
+            {
+                <li class="active">
+                    <a href="~/Videos/Index/2">Tennis</a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a href="~/Videos/Index/2">Tennis</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>*@
