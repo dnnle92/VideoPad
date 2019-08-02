@@ -30,6 +30,33 @@
                 @Html.ValidationMessageFor(model => model.DateAdded, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <table>
+                    <tr>
+                        @{ 
+                            int cnt = 0;
+                            List<VideoSIte.ViewModels.AssignedCategoryData> categories = ViewBag.Categories;
+
+                            foreach (var category in categories)
+                            {
+                                if (cnt++ % 3 == 0)
+                                {
+                                    @:</tr><tr>
+                                }
+                                @:<td> 
+                                    <input type="checkbox"
+                                        name="selectedCategories"
+                                        value="@category.CatId"
+                                        @(Html.Raw(category.Assigned ? "checked=\"checked\"" : "")) />
+                                        @category.CatId @: @category.CatName
+                                 @:</td>
+                            }
+                            @:</tr>
+                        }
+                </table>
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -46,7 +47,9 @@ namespace VideoSIte.Models
         [Key]
         public int VideoId { get; set; }
         public string VideoName { get; set; }
-        public System.DateTime DateAdded { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime DateAdded { get; set; }
 
         public virtual ICollection<Category> Categories { get; set; }
     }

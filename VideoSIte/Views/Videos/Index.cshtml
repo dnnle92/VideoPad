@@ -1,7 +1,7 @@
-﻿@model IEnumerable<VideoSIte.Models.Video>
-
+﻿@*@model IEnumerable<VideoSIte.Models.Video>*@
+@model VideoSIte.ViewModels.VideoIndexData
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Videos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -13,15 +13,18 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.VideoName)
+            Video Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateAdded)
+            Date Added
         </th>
-        <th></th>
+        <th>
+            Categories
+        </th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.Videos)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.VideoName)
@@ -30,11 +33,20 @@
             @Html.DisplayFor(modelItem => item.DateAdded)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.VideoId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.VideoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.VideoId })
+            @{ 
+                foreach (var category in item.Categories)
+                {
+                    @category.CatId @: @category.CatName <br />
+                }
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.VideoId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.VideoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.VideoId })
         </td>
     </tr>
 }
 
 </table>
+
