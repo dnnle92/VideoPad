@@ -124,7 +124,14 @@ namespace VideoSIte.Controllers
 
             return View(userdetail);
         }
-
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
     }
 }

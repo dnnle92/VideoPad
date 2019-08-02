@@ -1,9 +1,0 @@
-﻿@using VideoSIte.Models
-
-@using (var db = new ApplicationDbContext())
-{
-    foreach (var category in db.Categories)
-    {
-        <a href="@Url.Action("Category", "Video", new { id = category.CatId })" class="list-group-item">@category.CatName</a>
-    }
-}
