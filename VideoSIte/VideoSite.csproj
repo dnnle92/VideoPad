@@ -248,9 +248,12 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\UserDetail.cs" />
     <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Models\Video.cs" />
     <Compile Include="ViewModels\AssignedCategoryData.cs" />
     <Compile Include="ViewModels\VideoIndexData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

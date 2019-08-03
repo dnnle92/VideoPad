@@ -25,58 +25,6 @@ namespace VideoSIte.Models
         }
     }
 
-    public class UserDetail
-    {
-        [Key]
-        public string Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-
-        [ForeignKey("Id")]
-        public virtual ApplicationUser User { get; set; }
-    }
-
-    public class Video
-    {
-        public Video()
-        {
-            this.Categories = new HashSet<Category>();
-        }
-        [Key]
-        public int VideoId { get; set; }
-        public string VideoName { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime DateAdded { get; set; }
-
-        public virtual ICollection<Category> Categories { get; set; }
-    }
-
-    public class Category
-    {
-        public Category()
-        {
-            this.Videos = new HashSet<Video>();
-        }
-        [Key]
-        public int CatId { get; set; }
-        public string CatName { get; set; }
-
-        public virtual Category Parent { get; set; }
-        public virtual ICollection<Category> Children { get; set; }
-        public virtual ICollection<Video> Videos { get; set; }
-
-        public class Mapping : EntityTypeConfiguration<Category>
-        {
-            public Mapping()
-            {
-                HasOptional(m => m.Parent).WithMany(m => m.Children);
-            }
-        }
-    }
-
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<UserDetail> UserDetails { get; set; }
