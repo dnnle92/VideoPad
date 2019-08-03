@@ -8,8 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using VideoSIte.Models;
 
-namespace VideoSIte.Controllers
+namespace VideoSIte.Areas.admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

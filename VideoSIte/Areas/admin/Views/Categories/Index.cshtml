@@ -5,8 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Categories</h2>
 
+<ul class="nav nav-pills">
+    <li role="presentation"><a href="~/admin/UserAdmin/Index/"</a>User</li>
+    <li role="presentation"><a href="~/admin/Videos/Index/"</a>Videos</li>
+    <li role="presentation" class="active"><a href="~/admin/Categories/Index/"</a>Categories</li>
+</ul>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>

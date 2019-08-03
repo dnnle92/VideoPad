@@ -10,8 +10,9 @@ using System.Web.Mvc;
 using VideoSIte.Models;
 using VideoSIte.ViewModels;
 
-namespace VideoSIte.Controllers
+namespace VideoSIte.Areas.admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class VideosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

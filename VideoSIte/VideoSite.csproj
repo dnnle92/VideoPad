@@ -216,12 +216,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\admin\Controllers\UserAdminController.cs" />
+    <Compile Include="Areas\admin\Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\VideosController.cs" />
+    <Compile Include="Areas\admin\Controllers\VideosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -266,6 +267,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\admin\Views\web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -313,25 +315,27 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\CreateUser.cshtml" />
-    <Content Include="Views\Admin\AssignRole.cshtml" />
-    <Content Include="Views\Admin\UserView.cshtml" />
-    <Content Include="Views\Admin\Details.cshtml" />
-    <Content Include="Views\Admin\Edit.cshtml" />
-    <Content Include="Views\Categories\Create.cshtml" />
-    <Content Include="Views\Categories\Delete.cshtml" />
-    <Content Include="Views\Categories\Details.cshtml" />
-    <Content Include="Views\Categories\Edit.cshtml" />
-    <Content Include="Views\Categories\Index.cshtml" />
-    <Content Include="Views\Videos\Create.cshtml" />
-    <Content Include="Views\Videos\Delete.cshtml" />
-    <Content Include="Views\Videos\Details.cshtml" />
-    <Content Include="Views\Videos\Edit.cshtml" />
-    <Content Include="Views\Videos\Index.cshtml" />
+    <Content Include="Areas\admin\Views\UserAdmin\Index.cshtml" />
+    <Content Include="Areas\admin\Views\UserAdmin\CreateUser.cshtml" />
+    <Content Include="Areas\admin\Views\UserAdmin\AssignRole.cshtml" />
+    <Content Include="Areas\admin\Views\UserAdmin\UserView.cshtml" />
+    <Content Include="Areas\admin\Views\UserAdmin\Details.cshtml" />
+    <Content Include="Areas\admin\Views\UserAdmin\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Videos\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Videos\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Videos\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Videos\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Videos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\admin\Models\" />
+    <Folder Include="Areas\admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
