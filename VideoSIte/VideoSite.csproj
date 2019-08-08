@@ -246,11 +246,16 @@
     <Compile Include="Migrations\201907262223518_videocat EF.Designer.cs">
       <DependentUpon>201907262223518_videocat EF.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908061642314_Prducts.cs" />
+    <Compile Include="Migrations\201908061642314_Prducts.Designer.cs">
+      <DependentUpon>201908061642314_Prducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\UserDetail.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Models\Video.cs" />
@@ -366,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907262223518_videocat EF.resx">
       <DependentUpon>201907262223518_videocat EF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908061642314_Prducts.resx">
+      <DependentUpon>201908061642314_Prducts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -30,6 +30,7 @@ namespace VideoSIte.Models
         public DbSet<UserDetail> UserDetails { get; set; }
         public DbSet<Video> Videos { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -47,6 +48,15 @@ namespace VideoSIte.Models
                         vc.MapRightKey("VideoCatId");
                         vc.ToTable("VideoCategory");
                     });
+            modelBuilder.Entity<Product>()
+                .HasMany<Category>(i => i.Categories)
+                .WithMany(p => p.Products)
+                .Map(ip =>
+                {
+                    ip.MapLeftKey("ProductId");
+                    ip.MapRightKey("ProductCatId");
+                    ip.ToTable("ProductCategory");
+                });
 
             base.OnModelCreating(modelBuilder);
 

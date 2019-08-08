@@ -20,6 +20,7 @@ namespace VideoSIte.Models
         public virtual Category Parent { get; set; }
         public virtual ICollection<Category> Children { get; set; }
         public virtual ICollection<Video> Videos { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
 
         public class Mapping : EntityTypeConfiguration<Category>
         {

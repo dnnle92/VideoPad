@@ -2,17 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 using System.Web.Mvc;
 using VideoSIte.Models;
-
+using VideoSIte.ViewModels;
 
 namespace VideoSIte.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
+
+        public ActionResult Index(int? id)
         {
-            return View();
+            var viewModel = new VideoIndexData();
+            viewModel.Categories = db.Categories
+                .Include(i => i.Videos);
+            if (id != null)
+            {
+                ViewBag.CatId = id.Value;
+                viewModel.Videos = viewModel.Categories.Where(
+                    i => i.CatId == id.Value).Single().Videos;
+            }
+            return View(viewModel);
         }
 
         public ActionResult About()
