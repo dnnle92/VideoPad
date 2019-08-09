@@ -9,14 +9,24 @@
     <p><a href="#" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
+@Html.Action("CategoryPartial", "Home")
 
-<div class="row">
-    <div class="col-4">
-        <div class="list-group">
-            @foreach (var item in Model.Categories)
-            {
-                <a href="#" class="list-group-item">@item.CatName</a>
-            }
-        </div>
-    </div>
-</div>
+@Html.Action("VideoListPartial", "Home")
+
+
+
+@*<ul>
+    @foreach (var item in Model.Categories)
+    {
+        <li>@Html.ActionLink(item.CatName, "Index", "Home", new { category = item.CatId }, null)</li>
+        <ul>
+            <li>
+                @foreach (var video in item.Videos)
+                {
+                    @video.VideoName
+                }
+            </li>
+        </ul>
+
+    }
+</ul>*@

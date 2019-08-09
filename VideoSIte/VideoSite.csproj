@@ -339,6 +339,8 @@
     <Content Include="Areas\admin\Views\Videos\Details.cshtml" />
     <Content Include="Areas\admin\Views\Videos\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Videos\Index.cshtml" />
+    <Content Include="Views\Home\VideoListPartial.cshtml" />
+    <Content Include="Views\Home\CategoryPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

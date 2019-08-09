@@ -1,0 +1,8 @@
+﻿@model IEnumerable<VideoSIte.Models.Category>
+
+<ul>
+    @foreach (var item in Model)
+    {
+    <li>@Html.ActionLink(item.CatName, "Index", "Home", new { category = item.CatId }, null)</li>
+    }
+</ul>
