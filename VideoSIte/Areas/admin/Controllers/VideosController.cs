@@ -64,7 +64,7 @@ namespace VideoSIte.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VideoId,VideoName,DateAdded")] Video video, string[] selectedCategories)
+        public ActionResult Create([Bind(Include = "VideoId,VideoName,VideoUrlId,DateAdded")] Video video, string[] selectedCategories)
         {
             if (selectedCategories != null)
             {
@@ -137,7 +137,7 @@ namespace VideoSIte.Areas.admin.Controllers
                 .Where(i => i.VideoId == id)
                 .Single();
             if (TryUpdateModel(videoToUpdate, "",
-                new string[] { "VideoId", "VideoName", "DateAdded" }))
+                new string[] { "VideoId", "VideoName", "VideoUrlId", "DateAdded" }))
             {
                 try
                 {

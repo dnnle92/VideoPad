@@ -250,6 +250,10 @@
     <Compile Include="Migrations\201908061642314_Prducts.Designer.cs">
       <DependentUpon>201908061642314_Prducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908091829079_videoUrlId.cs" />
+    <Compile Include="Migrations\201908091829079_videoUrlId.Designer.cs">
+      <DependentUpon>201908091829079_videoUrlId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -376,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908061642314_Prducts.resx">
       <DependentUpon>201908061642314_Prducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908091829079_videoUrlId.resx">
+      <DependentUpon>201908091829079_videoUrlId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

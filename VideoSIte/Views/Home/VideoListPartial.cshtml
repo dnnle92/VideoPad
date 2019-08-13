@@ -1,9 +1,10 @@
 ﻿@model IEnumerable<VideoSIte.Models.Video>
 
-    <ul>
-        @foreach (var item in Model)
-        {
-            <li>@item.VideoName</li>
-        }
-    </ul>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.VideoName</li>
+        <li><iframe width="560" height="315" src="https://www.youtube.com/embed/@item.VideoUrlId" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+    }
+</ul>
 

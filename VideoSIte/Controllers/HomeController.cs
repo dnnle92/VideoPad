@@ -13,19 +13,11 @@ namespace VideoSIte.Controllers
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
 
-        public ActionResult Index(int? id)
+        public ActionResult Index()
         {
-            var viewModel = new VideoIndexData();
-            viewModel.Categories = db.Categories
-                .Include(i => i.Videos);
-            if (id != null)
-            {
-                ViewBag.CatId = id.Value;
-                viewModel.Videos = viewModel.Categories.Where(
-                    i => i.CatId == id.Value).Single().Videos;
-            }
-            return View(viewModel);
+            return View();
         }
+
         public PartialViewResult CategoryPartial()
         {
             var categoryList = db.Categories.OrderBy(x => x.CatName).ToList();
