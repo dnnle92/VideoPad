@@ -1,0 +1,13 @@
+﻿@model VideoSIte.Models.Video
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Video Detail</h2>
+
+@Html.DisplayFor(model => model.VideoName)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/@Model.VideoUrlId" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

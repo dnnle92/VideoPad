@@ -223,6 +223,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\admin\Controllers\VideosController.cs" />
+    <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -343,8 +344,10 @@
     <Content Include="Areas\admin\Views\Videos\Details.cshtml" />
     <Content Include="Areas\admin\Views\Videos\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Videos\Index.cshtml" />
-    <Content Include="Views\Home\VideoListPartial.cshtml" />
-    <Content Include="Views\Home\CategoryPartial.cshtml" />
+    <Content Include="Views\Shared\VideoListPartial.cshtml" />
+    <Content Include="Views\Shared\CategoryPartial.cshtml" />
+    <Content Include="Views\Videos\Index.cshtml" />
+    <Content Include="Views\Videos\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

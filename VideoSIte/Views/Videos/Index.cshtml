@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Videos</h2>
+
+@Html.Action("CategoryPartial", "Videos")
+
+@Html.Action("VideoListPartial", "Videos")

@@ -3,6 +3,6 @@
 <ul>
     @foreach (var item in Model)
     {
-    <li>@Html.ActionLink(item.CatName, "Index", "Home", new { category = item.CatId }, null)</li>
+    <li>@Html.ActionLink(item.CatName, "Index", "Videos", new { category = item.CatId }, null)</li>
     }
 </ul>

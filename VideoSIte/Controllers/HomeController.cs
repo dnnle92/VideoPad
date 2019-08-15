@@ -18,26 +18,6 @@ namespace VideoSIte.Controllers
             return View();
         }
 
-        public PartialViewResult CategoryPartial()
-        {
-            var categoryList = db.Categories.OrderBy(x => x.CatName).ToList();
-            return PartialView(categoryList);
-        }
-
-        public PartialViewResult VideoListPartial(int? category)
-        {
-            if (category != null)
-            {
-                var videosList = db.Videos.OrderByDescending(a => a.VideoId).Where(a => a.Categories.Any(c => c.CatId == category)).ToList();
-                return PartialView(videosList);
-            }
-            else
-            {
-                var videosList = db.Videos.OrderByDescending(a => a.VideoId).ToList();
-                return PartialView(videosList);
-            }
-        }
-
             public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
