@@ -26,12 +26,16 @@ namespace VideoSIte.Controllers
         {
             if (category != null)
             {
-                var videosList = db.Videos.OrderByDescending(a => a.VideoId).Where(a => a.Categories.Any(c => c.CatId == category)).ToList();
+                var videosList = db.Videos.OrderByDescending(a => a.VideoId)
+                                          .Where(a => a.Categories
+                                          .Any(c => c.CatId == category))
+                                          .ToList();
                 return PartialView(videosList);
             }
             else
             {
-                var videosList = db.Videos.OrderByDescending(a => a.VideoId).ToList();
+                var videosList = db.Videos.OrderByDescending(a => a.VideoId)
+                                   .ToList();
                 return PartialView(videosList);
             }
         }
