@@ -21,5 +21,6 @@ namespace VideoSIte.Models
         public string VideoUrlId { get; set; }
 
         public virtual ICollection<Category> Categories { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

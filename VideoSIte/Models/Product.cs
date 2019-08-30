@@ -10,5 +10,6 @@ namespace VideoSIte.Models
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public virtual ICollection<Category> Categories { get; set; }
+        public virtual ICollection<Video> Videos { get; set; }
     }
 }

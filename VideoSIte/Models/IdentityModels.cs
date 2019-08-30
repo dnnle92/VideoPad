@@ -52,11 +52,20 @@ namespace VideoSIte.Models
                 .HasMany<Category>(i => i.Categories)
                 .WithMany(p => p.Products)
                 .Map(ip =>
-                {
-                    ip.MapLeftKey("ProductId");
-                    ip.MapRightKey("ProductCatId");
-                    ip.ToTable("ProductCategory");
-                });
+                    {
+                        ip.MapLeftKey("ProductId");
+                        ip.MapRightKey("ProductCatId");
+                        ip.ToTable("ProductCategory");
+                    });
+            modelBuilder.Entity<Product>()
+                .HasMany<Video>(v => v.Videos)
+                .WithMany(p => p.Products)
+                .Map(vp =>
+                    {
+                        vp.MapLeftKey("ProductId");
+                        vp.MapRightKey("ProductVidId");
+                        vp.ToTable("ProductVideo");
+                    });
 
             base.OnModelCreating(modelBuilder);
 

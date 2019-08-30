@@ -4,7 +4,11 @@
     @foreach (var item in Model)
     {
         <li>@Html.ActionLink(@item.VideoName, "Details", "Videos", new { id = item.VideoId}, null)</li>
-        <li><iframe width="560" height="315" src="https://www.youtube.com/embed/@item.VideoUrlId" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        <li><iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/@item.VideoUrlId" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe></li>
     }
 </ul>
 
