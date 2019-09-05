@@ -48,12 +48,23 @@ namespace VideoSIte.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var video = db.Videos.Include(v => v.Products).SingleOrDefault(c => c.VideoId == id);
+            var video = db.Videos.SingleOrDefault(c => c.VideoId == id);
+
+            video.Products = GetProductsByVideoId(id);
+
             if (video == null)
             {
                 return HttpNotFound();
             }
             return View(video);
+        }
+
+        public List<Product> GetProductsByVideoId(int? videoId)
+        {
+            List<Product> products = new List<Product>();
+
+
+            return products;
         }
     }
 }

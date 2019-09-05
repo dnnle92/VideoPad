@@ -395,6 +395,12 @@
       <DependentUpon>201908261811271_ProductVideo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VideoCore\VideoCore.csproj">
+      <Project>{4b01eff1-677b-43d1-9172-67f60c098126}</Project>
+      <Name>VideoCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
