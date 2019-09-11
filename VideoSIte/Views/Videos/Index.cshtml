@@ -6,6 +6,13 @@
 
 <h2>Videos</h2>
 
-@Html.Action("CategoryPartial", "Videos")
 
-@Html.Action("VideoListPartial", "Videos")
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        @Html.Action("CategoryPartial", "Videos")
+    </div>
+    <div class="col-sm-6 col-md-4">
+        @Html.Action("VideoListPartial", "Videos")
+    </div>
+</div>
+

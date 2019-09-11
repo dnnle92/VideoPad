@@ -1,14 +1,31 @@
 ﻿@model IEnumerable<VideoSIte.Models.Video>
 
-<ul>
-    @foreach (var item in Model)
-    {
-        <li>@Html.ActionLink(@item.VideoName, "Details", "Videos", new { id = item.VideoId}, null)</li>
-        <li><iframe width="560" height="315" 
-                    src="https://www.youtube.com/embed/@item.VideoUrlId" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe></li>
-    }
-</ul>
+
+@for (int i = 0; i < Model.Count(); i += 3)
+{
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model.Skip(i).Take(3))
+            {
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <iframe width="350" height="250"
+                                src="https://www.youtube.com/embed/@item.VideoUrlId"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        <div class="caption">
+                            <h3>@item.VideoName</h3>
+                            <p>
+                                <a href="@Url.Action("Details", "Videos", new { id = item.VideoId })"
+                                    class="btn btn-primary" role="button">More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>          
+}
+
 

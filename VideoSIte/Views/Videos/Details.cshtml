@@ -7,17 +7,31 @@
 
 <h2>Video Detail</h2>
 
-@Html.DisplayFor(model => model.VideoName)
+<h3>@Html.DisplayFor(model => model.VideoName)</h3>
 
-<iframe width="560" height="315" 
-        src="https://www.youtube.com/embed/@Model.VideoUrlId" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen></iframe>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/@Model.VideoUrlId"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <div class="scrollmenu">
+                @{
+                    foreach (var item in Model.Products)
+                    {
+                        <a href="#">@item.ProductName</a>
+                    }
+                }
+                <a href="#">Home</a>
+                <a href="#">News</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-@{ 
-    foreach (var item in Model.Products)
-    {
-        @item.ProductName
-    }
-}
+
+
+

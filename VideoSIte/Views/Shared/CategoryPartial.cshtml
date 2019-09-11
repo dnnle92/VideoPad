@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<VideoSIte.Models.Category>
 
-<ul>
+<ul class="nav nav-pills nav-stacked">
     @foreach (var item in Model)
     {
     <li>@Html.ActionLink(item.CatName, "Index", "Videos", new { category = item.CatId }, null)</li>
