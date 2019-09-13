@@ -15,6 +15,7 @@ namespace VideoSIte.Models
         [Key]
         public int VideoId { get; set; }
         public string VideoName { get; set; }
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateAdded { get; set; }

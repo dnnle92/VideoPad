@@ -217,6 +217,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
+    <Compile Include="Areas\admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\admin\Controllers\UserAdminController.cs" />
     <Compile Include="Areas\admin\Controllers\CategoriesController.cs" />
@@ -259,6 +260,10 @@
     <Compile Include="Migrations\201908261811271_ProductVideo.Designer.cs">
       <DependentUpon>201908261811271_ProductVideo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909131738230_products dateadded.cs" />
+    <Compile Include="Migrations\201909131738230_products dateadded.Designer.cs">
+      <DependentUpon>201909131738230_products dateadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -269,6 +274,7 @@
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="ViewModels\AssignedCategoryData.cs" />
+    <Compile Include="ViewModels\AssignedVideoData.cs" />
     <Compile Include="ViewModels\VideoIndexData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -285,6 +291,11 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\admin\Views\web.config" />
+    <Content Include="Areas\admin\Views\Products\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Products\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Products\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Products\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -348,8 +359,8 @@
     <Content Include="Areas\admin\Views\Videos\Details.cshtml" />
     <Content Include="Areas\admin\Views\Videos\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Videos\Index.cshtml" />
-    <Content Include="Views\Shared\VideoListPartial.cshtml" />
-    <Content Include="Views\Shared\CategoryPartial.cshtml" />
+    <Content Include="Views\Shared\_VideoList.cshtml" />
+    <Content Include="Views\Shared\_CategoryList.cshtml" />
     <Content Include="Views\Videos\Index.cshtml" />
     <Content Include="Views\Videos\Details.cshtml" />
   </ItemGroup>
@@ -393,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908261811271_ProductVideo.resx">
       <DependentUpon>201908261811271_ProductVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909131738230_products dateadded.resx">
+      <DependentUpon>201909131738230_products dateadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

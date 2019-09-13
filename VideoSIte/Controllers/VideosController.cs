@@ -18,13 +18,13 @@ namespace VideoSIte.Controllers
         {
             return View();
         }
-        public PartialViewResult CategoryPartial()
+        public PartialViewResult _CategoryList()
         {
             var categoryList = db.Categories.OrderBy(x => x.CatName).ToList();
             return PartialView(categoryList);
         }
 
-        public PartialViewResult VideoListPartial(int? category)
+        public PartialViewResult _VideoList(int? category)
         {
             if (category != null)
             {

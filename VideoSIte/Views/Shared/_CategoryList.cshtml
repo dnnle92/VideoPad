@@ -1,0 +1,13 @@
+﻿@model IEnumerable<VideoSIte.Models.Category>
+
+<div class="container-fluid">
+    <div class="row">
+        <ul class="nav nav-pills nav-stacked">
+            @foreach (var item in Model)
+            {
+                <li>@Html.ActionLink(item.CatName, "Index", "Videos", new { category = item.CatId }, null)</li>
+            }
+        </ul>
+    </div>
+</div>
+

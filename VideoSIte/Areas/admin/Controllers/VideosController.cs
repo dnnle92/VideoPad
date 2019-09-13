@@ -30,9 +30,6 @@ namespace VideoSIte.Areas.admin.Controllers
                     i => i.VideoId == id.Value).Single().Categories;
             }
             return View(viewModel);
-
-            //var videos = db.Videos.Include(p => p.Categories);
-            //return View(videos.ToList());
         }
 
         // GET: Videos/Details/5
