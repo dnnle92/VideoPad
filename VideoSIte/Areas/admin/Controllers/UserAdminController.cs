@@ -46,6 +46,7 @@ namespace VideoSIte.Areas.admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult CreateUser(FormCollection form)
         {
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
@@ -70,6 +71,7 @@ namespace VideoSIte.Areas.admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AssignRole(FormCollection form)
         {
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
@@ -98,6 +100,7 @@ namespace VideoSIte.Areas.admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include ="Id,FirstName,LastName,Address,City")]UserDetail model)
         {            
             if (ModelState.IsValid)

@@ -1,21 +1,23 @@
 ﻿
 @{
     ViewBag.Title = "AssignRole";
-        Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Assign Role</h2>
 
-@using (Html.BeginForm("AssignRole","Admin", FormMethod.Post))
+@using (Html.BeginForm("AssignRole", "Admin", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
+
     <div class="row">
         <div class="col-md-6">
-           <label class="control-label">User Name</label>
+            <label class="control-label">User Name</label>
             <input type="text" name="txtUserName" class="form-control" />
         </div>
         <div class="col-md-6">
             <label class="control-label">Select Role</label>
-            @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles,"Select..")
+            @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select..")
         </div>
     </div>
     <div class="row">
