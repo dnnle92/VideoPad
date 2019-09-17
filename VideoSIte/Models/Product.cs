@@ -14,6 +14,7 @@ namespace VideoSIte.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateAdded { get; set; }
+        public string ProductImage { get; set; }
         public virtual ICollection<Category> Categories { get; set; }
         public virtual ICollection<Video> Videos { get; set; }
     }
