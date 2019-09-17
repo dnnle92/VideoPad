@@ -23,9 +23,14 @@
             Product Name
         </th>
         <th>
+            Product Image
+        </th>
+        <th>
             Date Added
         </th>
-        <th></th>
+        <th>
+            Video
+        </th>
     </tr>
 
     @foreach (var item in Model.Products)
@@ -33,6 +38,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductImage)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateAdded)
