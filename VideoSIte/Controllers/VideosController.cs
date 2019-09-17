@@ -41,6 +41,12 @@ namespace VideoSIte.Controllers
                 return PartialView(videosList);
             }
         }
+        public PartialViewResult _RelatedVideosList()
+        {
+            var videos = db.Videos.ToList();
+
+            return PartialView(videos);
+        }
 
         public ActionResult Details(int? id)
         {

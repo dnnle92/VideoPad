@@ -7,27 +7,36 @@
 
 
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-8">
             <h2>Video Detail</h2>
 
             <h3>@Html.DisplayFor(model => model.VideoName)</h3>
-            <iframe width="560" height="315"
-                    src="https://www.youtube.com/embed/@Model.VideoUrlId"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" 
+                        src="https://www.youtube.com/embed/@Model.VideoUrlId"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
             <div class="scrollmenu">
                 @{
                     foreach (var item in Model.Products)
                     {
-                        <a href="#">@item.ProductName</a>
+                        <a href="#">
+                            <figure>
+                                <img src="~/Content/Images/ProductImages/@item.ProductImage" class="img-responsive" alt="" width="100">
+                                <figcaption>@item.ProductName</figcaption>
+                            </figure>
+                        </a>
                     }
                 }
-                <a href="#">Home</a>
-                <a href="#">News</a>
-                <a href="#">Contact</a>
-                <a href="#">About</a>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-xs-6 col-md-2 pull-right">
+                @Html.Action("_RelatedVideosList", "Videos")
             </div>
         </div>
     </div>

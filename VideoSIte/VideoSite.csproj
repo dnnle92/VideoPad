@@ -264,6 +264,10 @@
     <Compile Include="Migrations\201909131738230_products dateadded.Designer.cs">
       <DependentUpon>201909131738230_products dateadded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909171529528_video and product image.cs" />
+    <Compile Include="Migrations\201909171529528_video and product image.Designer.cs">
+      <DependentUpon>201909171529528_video and product image.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -363,11 +367,13 @@
     <Content Include="Views\Shared\_CategoryList.cshtml" />
     <Content Include="Views\Videos\Index.cshtml" />
     <Content Include="Views\Videos\Details.cshtml" />
+    <Content Include="Views\Videos\_RelatedVideosList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Models\" />
     <Folder Include="Areas\admin\Views\Shared\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -407,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909131738230_products dateadded.resx">
       <DependentUpon>201909131738230_products dateadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909171529528_video and product image.resx">
+      <DependentUpon>201909171529528_video and product image.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
