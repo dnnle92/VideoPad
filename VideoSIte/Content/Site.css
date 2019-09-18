@@ -5,8 +5,8 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -36,4 +36,28 @@ div.scrollmenu a {
 }
 div.scrollmenu a:hover {
     background-color: #777;
+}
+.nopadding {
+    padding: 0 !important;
+}
+.thumbnails {
+    border: 0 none;
+    box-shadow: none;
+}
+.paddingleft {
+    padding-left: 100px;
+}
+html, body {
+    height: 100vh;
+}
+
+
+@media (min-width:992px) {
+    .pull-right-sm {
+        float: right;
+    }
+    .container-fluid .row .col-md-2 {
+        height:100vh;
+        overflow: auto;
+    }
 }

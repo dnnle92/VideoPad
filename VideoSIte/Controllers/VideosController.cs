@@ -13,6 +13,7 @@ namespace VideoSIte.Controllers
     public class VideosController : Controller
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
+
         // GET: Videos
         public ActionResult Index()
         {
@@ -36,14 +37,13 @@ namespace VideoSIte.Controllers
             }
             else
             {
-                var videosList = db.Videos.OrderByDescending(a => a.VideoId)
-                                   .ToList();
+                var videosList = db.Videos.OrderByDescending(a => a.VideoId).ToList();
                 return PartialView(videosList);
             }
         }
-        public PartialViewResult _RelatedVideosList()
+        public PartialViewResult _RelatedVideosList(int? id)
         {
-            var videos = db.Videos.ToList();
+            var videos = db.Videos.Where(x => x.VideoId != id).Take(5).ToList();
 
             return PartialView(videos);
         }

@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<VideoSIte.Models.Video>
 
-    <div class="list-group">
-        @{
+<div class="list-group">
+    @{
             foreach (var item in Model)
             {
-            <a href="@Url.Action("Details", "Videos", new { id = item.VideoId })" class="thumbnail">
-                <img src="~/Content/Images/VideoImages/@item.VideoImage" class="img-responsive" alt="..." width="250">
-                <h4 class="list-group-item-heading">@item.VideoName</h4>
+            <a href="@Url.Action("Details", "Videos", new { id = item.VideoId })" class="thumbnail thumbnails">
+                <img src="~/Content/Images/VideoImages/@item.VideoImage" class="img-responsive" alt="" width="200">
+                <h4 class="list-group-item-heading text-center">@item.VideoName</h4>
             </a>
-            }
         }
-    </div>
+    }
+</div>

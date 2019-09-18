@@ -5,8 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6 col-md-8">
@@ -20,6 +18,7 @@
                         allowfullscreen>
                 </iframe>
             </div>
+            <h3>Video Products</h3>
             <div class="scrollmenu">
                 @{
                     foreach (var item in Model.Products)
@@ -35,13 +34,10 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="col-xs-6 col-md-2 pull-right">
+            <div class="col-sm-6 col-md-3 pull-right-sm">
+                <h3 class="text-center">More Videos</h3>
                 @Html.Action("_RelatedVideosList", "Videos")
             </div>
         </div>
     </div>
 </div>
-
-
-
-
