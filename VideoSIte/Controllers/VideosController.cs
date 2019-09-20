@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -43,8 +44,8 @@ namespace VideoSIte.Controllers
         }
         public PartialViewResult _RelatedVideosList(int? id)
         {
-            var videos = db.Videos.Where(x => x.VideoId != id).Take(5).ToList();
-
+            var videos = db.Videos.SqlQuery("[dbo].[spGetRelatedVideos] @VideoId", new SqlParameter("VideoId", id))
+                                  .Where(x => x.VideoId != id).Take(5).ToList();
             return PartialView(videos);
         }
 

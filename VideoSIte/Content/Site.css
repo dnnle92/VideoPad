@@ -56,7 +56,7 @@ html, body {
     .pull-right-sm {
         float: right;
     }
-    .container-fluid .row .col-md-2 {
+    .container-fluid .row #CatList {
         height:100vh;
         overflow: auto;
     }
