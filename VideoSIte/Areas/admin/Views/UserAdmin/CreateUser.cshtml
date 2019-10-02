@@ -6,7 +6,7 @@
 
 <h2>Create User</h2>
 
-@using (Html.BeginForm("CreateUser", "Admin", FormMethod.Post))
+@using (Html.BeginForm("CreateUser", "UserAdmin", FormMethod.Post))
 
 {
     @Html.AntiForgeryToken()
@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-6">
             <label class="control-label">Password</label>
-            <input type="text" name="txtPassword" class="form-control" />
+            <input type="password" name="txtPassword" class="form-control" />
         </div>
     </div>
     <div class="row">
